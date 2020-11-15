@@ -1,4 +1,5 @@
 import express from "express";
+import fs from "fs";
 import path from "path";
 import { getDirectoryTree } from "./get-directory-tree";
 import { webpackMiddleware } from "./webpack";
@@ -12,6 +13,15 @@ app.use(webpackMiddleware);
 
 app.get("/directory-tree", async (_req, res) => {
     res.json(await getDirectoryTree(USER_FILES_DIR));
+});
+
+app.get("/file-rename", ({ query }, res) => {
+    // Rename file
+    fs.renameSync(
+        `${USER_FILES_DIR}/${query.parentDirPath}/${query.oldName}`,
+        `${USER_FILES_DIR}/${query.parentDirPath}/${query.newName}`
+    );
+    res.sendStatus(200);
 });
 
 app.listen(SERVER_PORT, () => {

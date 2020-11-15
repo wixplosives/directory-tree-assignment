@@ -9,3 +9,17 @@ export const useDirectoryTree = () =>
             refetchOnWindowFocus: false,
         }
     );
+
+export const renameFile = (
+    parentDirPath: string,
+    oldName: string,
+    newName: string
+) => {
+    console.log(parentDirPath, oldName, newName);
+    return fetch(
+        `/file-rename` +
+            `?parentDirPath=${parentDirPath}` +
+            `&oldName=${oldName}` +
+            `&newName=${newName}`
+    );
+};

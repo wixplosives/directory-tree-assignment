@@ -27,3 +27,46 @@
     text-overflow: ellipsis;
     white-space: pre;
 }
+
+.itemNameChangeIcon {
+    display: none;
+    cursor: pointer;
+}
+
+.item:hover .itemNameChangeIcon {
+    display: block;
+}
+
+.itemNameEdit {
+    flex: 1 1 auto;
+    position: relative;
+}
+
+.itemNameInput {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    line-height: 20px;
+    border: 1px solid #0090f9;
+    outline: none;
+    transform: translate(-1px, 0);
+}
+
+.itemNameInput.invalid {
+    border: 1px solid #c80000;
+}
+
+.itemNameErrorMessage {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    color: #444;
+    background: #f6dddd;
+    border: 1px solid #c80000;
+    padding: 3px 5px;
+    font-size: 12px;
+    line-height: 18px;
+    width: calc(100% - 10px);
+    transform: translate(-1px, -3px);
+}
