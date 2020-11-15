@@ -1,0 +1,29 @@
+.root {
+    width: 200px;
+    font: 13px/22px sans-serif;
+}
+
+.directoryContents {
+    margin-left: 20px;
+}
+
+.root > .directoryContents {
+    margin-left: 0;
+}
+
+.item {
+    display: flex;
+    cursor: default;
+    align-items: center;
+}
+
+.itemIcon {
+    flex: none;
+    margin-right: 6px;
+}
+
+.itemName {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+}
